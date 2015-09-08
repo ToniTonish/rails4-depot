@@ -2,6 +2,8 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
+
+<div style="float: right;"><% if @count %><%= pluralize @count, 'time' %><% end %></div>
 <h1>Your Pragmatic Catalog</h1>
 
 <% cache ['store', Product.latest] do %>
