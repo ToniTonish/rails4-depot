@@ -5,4 +5,5 @@ $('#current_item').css({'background-color':'#88ff88'}).animate({'background-colo
 if ($('#cart tr').length == 1) {
 	$('#cart tr').not('.total_line').remove();
 	$('#cart').hide('blind', 1000);
+	window.location = "<%= escape_javascript store_url %>";
 }
