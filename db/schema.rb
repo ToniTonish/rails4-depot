@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912090520) do
+ActiveRecord::Schema.define(version: 20150923140639) do
 
   create_table "carts", force: true do |t|
     t.datetime "created_at"
@@ -36,7 +36,15 @@ ActiveRecord::Schema.define(version: 20150912090520) do
     t.string   "name"
     t.text     "address"
     t.string   "email"
-    t.string   "pay_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "pay_type_id"
+  end
+
+  add_index "orders", ["pay_type_id"], name: "index_orders_on_pay_type_id"
+
+  create_table "pay_types", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
